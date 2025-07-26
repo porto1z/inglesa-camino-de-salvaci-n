@@ -41,17 +41,4 @@ git clone git@github.com:porto1z/inglesa-camino-de-salvaci-n.git
 cd inglesa-camino-de-salvaci-n
 
 
----
 
-### ✅ 2. Cómo agregar este `README.md` a tu repositorio
-
-#### 🔹 PASO A PASO en la terminal:
-
-1. Guarda el contenido anterior en un archivo llamado `README.md`.
-2. Abre la terminal en la carpeta del proyecto.
-3. Ejecuta los siguientes comandos:
-
-```bash
-git add README.md
-git commit -m "Agrega README completo del sitio web de la iglesia"
-git push origin main
