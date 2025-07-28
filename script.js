@@ -562,4 +562,38 @@
             }
         });
 
-        console.log('🎉 Iglesia Cristiana Moderna - Sitio web completamente funcional cargado exitosamente!');
+        console.log('🎉 Iglesia Cristiana Moderna - Sitio web completamente funcional cargado exitosamente!'); 
+
+
+       // codigo nuevo 
+
+        const stripe = Stripe("pk_test_TU_CLAVE_PUBLICA_DE_STRIPE");
+
+        document.getElementById('donarBtn').addEventListener('click', () => {
+            stripe.redirectToCheckout({
+            lineItems: [{
+                price: 'price_1...', // ID del producto/precio en Stripe
+                quantity: 1
+            }],
+            mode: 'payment',
+            successUrl: 'https://iglesiacaminodesalvacion.netlify.app/donacion-exitosa',
+            cancelUrl: 'https://iglesiacaminodesalvacion.netlify.app/donacion-cancelada',
+            }).then(res => {
+            if (res.error) alert(res.error.message);
+            });
+        });
+
+        //nuevo codido 
+
+                function abrirVideo(url) {
+        document.getElementById('videoFrame').src = url + '?autoplay=1';
+        document.getElementById('videoModal').classList.remove('hidden');
+        document.getElementById('videoModal').classList.add('flex');
+        }
+
+        function cerrarVideo() {
+        document.getElementById('videoFrame').src = '';
+        document.getElementById('videoModal').classList.add('hidden');
+        document.getElementById('videoModal').classList.remove('flex');
+        }
+
