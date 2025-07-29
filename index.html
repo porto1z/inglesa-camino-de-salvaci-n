@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilos.css">
+    
     <script src="script.js"></script>
 
     <script src="https://js.stripe.com/v3/"></script>
 
-</head>
+</head> 
 <body class="bg-white">
     <!-- Header -->
     <header class="fixed top-0 w-full bg-white shadow-sm z-50">
@@ -62,7 +63,7 @@
             <!-- Hero Section -->
             <div class="relative h-screen flex items-center justify-center text-white">
                 <div class="hero-video relative w-full h-full overflow-hidden">
-                    <div class="div class="hero-video" style="position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden;"">
+                    <div class="div class="hero-video" style="position: relative; width: 100%; aspect-ratio: 16/9; overflow: hidden;"">
                         <iframe
                             src="https://www.youtube.com/embed/hJA9vnxwoHU?autoplay=1&mute=1&loop=1&playlist=hJA9vnxwoHU&controls=0&showinfo=0&rel=0&modestbranding=1"
                             frameborder="0"
@@ -133,55 +134,61 @@
                 </div>
             </section>
 
+            
             <!-- Recent Sermons Preview -->
             <section class="py-20">
                 <div class="container mx-auto px-4">
-                    <div class="flex justify-between items-center mb-12">
-                        <h2 class="text-4xl font-bold text-gray-900">Últimos Sermones</h2>
-                        <button onclick="showPage('sermones')" class="btn-secondary px-6 py-3 rounded-full font-semibold">
-                            Ver todos
-                        </button>
+                <div class="flex justify-between items-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-900">Últimos Cultos</h2>
+                    <button onclick="showPage('sermones')" class="btn-secondary px-6 py-3 rounded-full font-semibold">
+                    Ver todos
+                    </button>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Primera tarjeta -->
+                    <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="video-container relative aspect-w-16 aspect-h-9">
+                        <!-- Miniatura -->
+                        <img src="https://img.youtube.com/vi/hpPSNiS1ocY/maxresdefault.jpg" alt="Amor Incondicional" class="w-full h-full object-cover"
+                        onclick="openModal('hpPSNiS1ocY')" />
                     </div>
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden">
-                            <div class="video-container bg-gray-200">
-                                <div class="flex items-center justify-center h-full">
-                                    <i class="fas fa-play-circle text-6xl text-orange-500"></i>
-                                </div>
-                            </div>
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2 text-gray-900">Fe que Transforma</h3>
-                                <p class="text-gray-600 mb-4">Descubre cómo la fe puede cambiar completamente tu perspectiva de vida.</p>
-                                <button class="text-orange-500 font-semibold hover:text-orange-600">Ver sermón completo →</button>
-                            </div>
-                        </div>
-                        
-                        <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden">
-                            <div class="video-container bg-gray-200">
-                                <div class="flex items-center justify-center h-full">
-                                    <i class="fas fa-play-circle text-6xl text-orange-500"></i>
-                                </div>
-                            </div>
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2 text-gray-900">Amor Incondicional</h3>
-                                <p class="text-gray-600 mb-4">El mensaje de amor de Dios que no depende de nuestras circunstancias.</p>
-                                <button class="text-orange-500 font-semibold hover:text-orange-600">Ver sermón completo →</button>
-                            </div>
-                        </div>
-                        
-                        <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden">
-                            <div class="video-container bg-gray-200">
-                                <div class="flex items-center justify-center h-full">
-                                    <i class="fas fa-play-circle text-6xl text-orange-500"></i>
-                                </div>
-                            </div>
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2 text-gray-900">Propósito Divino</h3>
-                                <p class="text-gray-600 mb-4">Encuentra tu llamado y propósito en el plan perfecto de Dios.</p>
-                                <button class="text-orange-500 font-semibold hover:text-orange-600">Ver sermón completo →</button>
-                            </div>
-                        </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Amor Incondicional</h3>
+                        <p class="text-gray-600 mb-4">El mensaje de amor de Dios que no depende de nuestras circunstancias.</p>
+                        <button class="text-orange-500 font-semibold hover:text-orange-600" onclick="openModal('hpPSNiS1ocY')">Ver sermón completo →</button>
                     </div>
+                    </div>
+
+                    <!-- Segunda tarjeta -->
+                    <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="video-container relative aspect-w-16 aspect-h-9">
+                        <!-- Miniatura -->
+                        <img src="https://img.youtube.com/vi/jFCML5GmyFQ/maxresdefault.jpg" alt="Fe que Transforma" class="w-full h-full object-cover"
+                        onclick="openModal('jFCML5GmyFQ')" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Fe que Transforma</h3>
+                        <p class="text-gray-600 mb-4">Descubre cómo la fe puede cambiar completamente tu perspectiva de vida.</p>
+                        <button class="text-orange-500 font-semibold hover:text-orange-600" onclick="openModal('jFCML5GmyFQ')">Ver sermón completo →</button>
+                    </div>
+                    </div>
+
+                    <!-- Tercera tarjeta -->
+                    <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="video-container relative aspect-w-16 aspect-h-9">
+                        <!-- Miniatura -->
+                        <img src="https://img.youtube.com/vi/5pLmQ2Yx9HI/maxresdefault.jpg" alt="Propósito Divino" class="w-full h-full object-cover"
+                        onclick="openModal('5pLmQ2Yx9HI')" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Propósito Divino</h3>
+                        <p class="text-gray-600 mb-4">Encuentra tu llamado y propósito en el plan perfecto de Dios.</p>
+                        <button class="text-orange-500 font-semibold hover:text-orange-600" onclick="openModal('5pLmQ2Yx9HI')">Ver sermón completo →</button>
+                    </div>
+                    </div>
+
+                </div>
                 </div>
             </section>
 
@@ -1240,6 +1247,16 @@
             </div>
         </div>
     </div> 
+
+  <!-- Modal -->
+    <div id="videoModal" class="fixed inset-0 hidden flex items-center justify-center z-50" onclick="closeModal(event)">
+        <div class="modal-content">
+        <button class="close-btn" onclick="closeModal(event)">×</button>
+        <div class="iframe-container">
+            <iframe id="modalVideo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        </div>
+    </div>
 
 </body>
 </html>

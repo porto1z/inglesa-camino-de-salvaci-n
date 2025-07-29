@@ -117,25 +117,73 @@
             color: #92400e;
         }
         
-        .video-container {
-            position: relative;
-            width: 100%;
-            height: 0;
-            padding-bottom: 56.25%;
-        }
         
-        .video-container iframe,
-        .video-container video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-
-        
-
-        /*video nuevo*/
     
+        /*codigo nuevo*/
         
+        /* Hacer que la miniatura sea interactiva */
+        .video-container:hover {
+        cursor: pointer;
+        opacity: 0.8;
+        }
+
+        /* Modal content: redondeado y alto */
+        .modal-content {
+        border-radius: 1rem;
+        height: 90vh;
+        max-height: 90vh;
+        width: 90vw;
+        max-width: 900px;
+        background: white;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        }
+
+        /* Contenedor iframe para que ocupe todo */
+        .iframe-container {
+        position: relative;
+        flex-grow: 1;
+        overflow: hidden;
+        border-radius: 1rem;
+        }
+
+        /* Iframe para que cubra todo el contenedor */
+        #modalVideo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 1rem;
+        object-fit: cover;
+        }
+
+        /* Botón cerrar naranja y redondo */
+        .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #f97316; /* Tailwind orange-500 */
+        color: white;
+        border-radius: 9999px;
+        padding: 0.75rem;
+        border: none;
+        cursor: pointer;
+        z-index: 10;
+        font-weight: bold;
+        font-size: 1.25rem;
+        line-height: 1;
+        user-select: none;
+        }
+
+        /* Fondo modal */
+        #videoModal {
+        background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .text-orange-500 {
+        --tw-text-opacity: 1;
+        color: rgb(249 115 22 / var(--tw-text-opacity, 1));
+}
+            
