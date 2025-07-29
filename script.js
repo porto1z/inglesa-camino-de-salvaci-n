@@ -597,3 +597,24 @@
         document.getElementById('videoModal').classList.remove('flex');
         }
 
+
+
+         
+        // Abrir el modal con el video
+        function openModal(videoId) {
+        document.getElementById('videoModal').classList.remove('hidden');
+        document.getElementById('modalVideo').src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1&rel=0";
+        document.body.style.overflow = 'hidden'; // evitar scroll mientras modal abierto
+        }
+
+        // Cerrar el modal
+        function closeModal(event) {
+        // Solo cerrar si clic en fondo o en botón (la X)
+        if (
+            event.target.id !== "videoModal" &&
+            !event.target.classList.contains("close-btn")
+        ) return;
+        document.getElementById('videoModal').classList.add('hidden');
+        document.getElementById('modalVideo').src = ""; // detener video
+        document.body.style.overflow = ''; // restaurar scroll
+        }
